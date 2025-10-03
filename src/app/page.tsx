@@ -10,7 +10,6 @@ export default function HomePage() {
     <div>
       <div style={{ position: "relative" }}>
         <HeroSection header={<AppHeader />} />
-
         <Content>
           <div>
             <h1>Chào buổi sáng</h1>

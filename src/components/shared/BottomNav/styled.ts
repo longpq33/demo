@@ -14,6 +14,7 @@ export const Bar = styled.nav`
   gap: 8px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
   z-index: 10;
+  overflow: hidden;
 `;
 
 export const Item = styled.a`
@@ -26,7 +27,6 @@ export const Item = styled.a`
   text-decoration: none;
   font-size: 12px;
   gap: 6px;
-  border-radius: 8px;
 
   &:hover {
     background: #fff;
