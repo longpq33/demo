@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { Overlay, Wrapper, Content, Title, Subtitle, SearchBox, HeaderSlot } from "./styled";
-import { Input } from "antd";
+import { Overlay, Wrapper, HeaderSlot } from "./styled";
 import bg from "@/assets/bg-home.png";
 
 export default function HeroSection({ header }: { header?: React.ReactNode }) {
@@ -11,9 +10,6 @@ export default function HeroSection({ header }: { header?: React.ReactNode }) {
       {header && <HeaderSlot>{header}</HeaderSlot>}
       <Image src={bg} alt="hero" fill priority style={{ objectFit: "cover" }} />
       <Overlay />
-     
     </Wrapper>
   );
 }
-
-
