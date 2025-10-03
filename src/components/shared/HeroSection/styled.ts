@@ -1,0 +1,56 @@
+import styled from "styled-components";
+
+export const Wrapper = styled.section`
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(180deg, #bfe3ff 0%, #eaf6ff 40%, #ffd1b8 75%, #ffb389 90%);
+`;
+
+export const Overlay = styled.div`
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(255,77,0,0.35) 70%, rgba(255,0,0,0.45) 100%);
+`;
+
+export const Content = styled.div`
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @media (min-width: 768px) {
+    padding: 48px 24px;
+    gap: 16px;
+  }
+`;
+
+export const Title = styled.h1`
+  font-size: 32px;
+  font-weight: 800;
+  color: #1f1f1f;
+
+  @media (min-width: 768px) {
+    font-size: 40px;
+  }
+`;
+
+export const Subtitle = styled.p`
+  color: #555;
+`;
+
+export const SearchBox = styled.div`
+  max-width: 560px;
+`;
+
+export const HeaderSlot = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+`;
