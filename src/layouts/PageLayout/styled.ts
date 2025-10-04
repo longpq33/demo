@@ -6,7 +6,8 @@ export const Shell = styled.div`
 `;
 
 export const Content = styled.main`
-   padding: 24px;
+  padding: 24px;
+  padding-bottom: 100px; /* Space for collapsed footer */
 `;
 
 export const FooterArea = styled.footer`

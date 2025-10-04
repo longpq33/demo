@@ -1,0 +1,236 @@
+import styled from "styled-components";
+import { Button } from "antd";
+
+export const FooterContainer = styled.footer`
+  background: #0f2743;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999; /* Very high z-index to ensure footer is always on top */
+`;
+
+export const CollapseButton = styled.button<{ $isCollapsed: boolean }>`
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: #ff4d00;
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10000; /* Highest z-index for collapse button */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translateX(-50%) translateY(-2px);
+  }
+
+  &:active {
+    transform: translateX(-50%) translateY(0px);
+  }
+
+  svg {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: ${({ $isCollapsed }) => $isCollapsed ? 'rotate(180deg)' : 'rotate(0deg)'};
+  }
+`;
+
+export const TopSection = styled.div<{ $isCollapsed: boolean }>`
+  padding: ${({ $isCollapsed }) => $isCollapsed ? '0 24px' : '40px 24px 32px'};
+  height: ${({ $isCollapsed }) => $isCollapsed ? '0' : 'auto'};
+  max-height: ${({ $isCollapsed }) => $isCollapsed ? '0' : '1000px'};
+  overflow: hidden;
+  transition: padding 0.4s ease, height 0.4s ease, max-height 0.4s ease;
+`;
+
+export const BottomSection = styled.div`
+  padding: 32px 24px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 24px;
+  }
+`;
+
+export const NavigationGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 40px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+`;
+
+export const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ColumnTitle = styled.h3`
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+`;
+
+export const LinkItem = styled.a`
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 8px;
+  opacity: 0.9;
+  transition: opacity 0.5s ease;
+
+  &:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+`;
+
+export const AppSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
+
+export const AppButton = styled.button`
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #333;
+  }
+
+  span {
+    font-size: 14px;
+    font-weight: 500;
+  }
+`;
+
+export const CompanyInfo = styled.div`
+  flex: 1;
+`;
+
+export const Logo = styled.div`
+  background: #ed1c24;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 12px;
+`;
+
+export const CompanyName = styled.h4`
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+`;
+
+export const Address = styled.p`
+  font-size: 14px;
+  color: #fff;
+  opacity: 0.9;
+  line-height: 1.5;
+`;
+
+export const ContactSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+`;
+
+export const ContactTitle = styled.h4`
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+`;
+
+export const ContactLink = styled.a`
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.9;
+
+  &:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+`;
+
+export const SocialIcons = styled.div`
+  display: flex;
+  gap: 12px;
+`;
+
+export const SocialIcon = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+`;
+
+export const PhoneSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 200px;
+`;
+
+export const PhoneItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`;
+
+export const PhoneLabel = styled.span`
+  font-size: 14px;
+  color: #fff;
+  opacity: 0.9;
+`;
+
+export const PhoneNumber = styled.span`
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+`;

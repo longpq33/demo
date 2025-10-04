@@ -1,8 +1,9 @@
 import React from "react";
-import { MenuWrap } from "./styled";
+import { LeftMenu, MenuWrap } from "./styled";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/assets/logo.png";
+import { ButtonLogin } from "@/components/shared/AppHeader/styled";
 
 
 const items = [
@@ -16,6 +17,7 @@ const items = [
 export default function TopBarMenu() {
   return (
     <MenuWrap>
+      <LeftMenu>
       {
         items.map((item) => (
           <Link key={item.key} href={item.href}>
@@ -24,6 +26,9 @@ export default function TopBarMenu() {
           </Link>
         ))
       }
+      </LeftMenu>
+    
+      <ButtonLogin>Đăng nhập</ButtonLogin>
     </MenuWrap>
   );
 }

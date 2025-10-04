@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { Shell, Content, FooterArea } from "./styled";
-import { ChatWidget } from "@/components";
+import { Shell, Content } from "./styled";
+import { ChatWidget, Footer } from "@/components";
 
 export interface PageLayoutProps {
   header?: React.ReactNode;
@@ -9,13 +9,13 @@ export interface PageLayoutProps {
   children: React.ReactNode;
 }
 
-export default function PageLayout({ header, footer, children }: PageLayoutProps) {
+export default function PageLayout({ header, children }: PageLayoutProps) {
   return (
     <Shell>
       {header}
       <Content>{children}</Content>
-      {/* {footer ? <FooterArea>{footer}</FooterArea> : null} */}
-      {/* <ChatWidget /> */}
+      <Footer />
+      <ChatWidget />
     </Shell>
   );
 }
