@@ -45,8 +45,8 @@ export default function Footer() {
   return (
     <FooterContainer>
       <CollapseButton onClick={toggleCollapse} $isCollapsed={isCollapsed}>
-        {isCollapsed ? "Liên kết khác" : "Thu gọn"}
         <ChevronDown color="#ff4d00" />
+        {isCollapsed ? "Thu gọn" : "Liên kết khác"}
       </CollapseButton>
 
       <TopSection $isCollapsed={isCollapsed}>

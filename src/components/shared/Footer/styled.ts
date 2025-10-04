@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Button } from "antd";
 
 export const FooterContainer = styled.footer`
   background: #0f2743;
@@ -39,14 +38,14 @@ export const CollapseButton = styled.button<{ $isCollapsed: boolean }>`
 
   svg {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: ${({ $isCollapsed }) => $isCollapsed ? 'rotate(180deg)' : 'rotate(0deg)'};
+    transform: ${({ $isCollapsed }) => $isCollapsed ? 'rotate(0deg)' : 'rotate(180deg)'};
   }
 `;
 
 export const TopSection = styled.div<{ $isCollapsed: boolean }>`
-  padding: ${({ $isCollapsed }) => $isCollapsed ? '0 24px' : '40px 24px 32px'};
-  height: ${({ $isCollapsed }) => $isCollapsed ? '0' : 'auto'};
-  max-height: ${({ $isCollapsed }) => $isCollapsed ? '0' : '1000px'};
+  padding: ${({ $isCollapsed }) => $isCollapsed ? '40px 24px 32px' : '0 24px'};
+  height: ${({ $isCollapsed }) => $isCollapsed ? 'auto' : '0'};
+  max-height: ${({ $isCollapsed }) => $isCollapsed ? '1000px' : '0'};
   overflow: hidden;
   transition: padding 0.4s ease, height 0.4s ease, max-height 0.4s ease;
 `;
