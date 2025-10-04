@@ -2,13 +2,15 @@
 import React from "react";
 import Image from "next/image";
 import { Overlay, Wrapper, HeaderSlot } from "./styled";
-import bg from "@/assets/bg-home.png";
+import { useBackground } from "@/contexts/BackgroundContext";
 
 export default function HeroSection({ header }: { header?: React.ReactNode }) {
+  const { backgroundImage } = useBackground();
+  
   return (
     <Wrapper>
       {header && <HeaderSlot>{header}</HeaderSlot>}
-      <Image src={bg} alt="hero" fill priority style={{ objectFit: "cover" }} />
+      <Image src={backgroundImage} alt="hero" fill priority style={{ objectFit: "cover" }} />
       <Overlay />
     </Wrapper>
   );

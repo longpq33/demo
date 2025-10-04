@@ -20,13 +20,13 @@ const items = [
   },
 ];
 
-export default function AwardsList() {
+export default function AwardsList({ color }: { color: string }) {
   return (
     <Wrapper>
       {items.map((it) => (
         <Item key={it.title}>
-          <Title>{it.title}</Title>
-          <By>{it.by} <strong style={{ color: "#1f1f1f" }}>{it.name}</strong></By>
+          <Title style={{ color: color }}>{it.title}</Title>
+          <By style={{ color: color }}>{it.by} <strong style={{ color: color }}>{it.name}</strong></By>
         </Item>
       ))}
     </Wrapper>

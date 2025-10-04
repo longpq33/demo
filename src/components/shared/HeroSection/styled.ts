@@ -4,13 +4,13 @@ export const Wrapper = styled.section`
   position: relative;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(180deg, #bfe3ff 0%, #eaf6ff 40%, #ffd1b8 75%, #ffb389 90%);
+  /* Background gradient removed to show image clearly */
 `;
 
 export const Overlay = styled.div`
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(255,77,0,0.35) 70%, rgba(255,0,0,0.45) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%);
 `;
 
 export const Content = styled.div`

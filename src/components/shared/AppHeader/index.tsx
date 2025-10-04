@@ -10,7 +10,7 @@ import CareerIcon from "@/assets/career.png";
 import VN from "@/assets/vn-flag.png";
 import ChevronDown from "@/assets/icons/chevron-down";
 
-function LinkItem({
+export function LinkItem({
   href,
   label,
   icon,

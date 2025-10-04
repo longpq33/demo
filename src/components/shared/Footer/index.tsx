@@ -13,7 +13,6 @@ import {
   AppSection,
   AppButton,
   CompanyInfo,
-  Logo,
   CompanyName,
   Address,
   ContactSection,
@@ -25,16 +24,16 @@ import {
   PhoneItem,
   PhoneLabel,
   PhoneNumber,
+  YouTube,
 } from "./styled";
 import ChevronDown from "@/assets/icons/chevron-down";
 import GooglePlay from "@/assets/icons/google-store.png";
 import AppStore from "@/assets/icons/app-store.png";
 import Facebook from "@/assets/icons/facebook.svg";
 import LinkedIn from "@/assets/icons/linkedin.svg";
-import YouTube from "@/assets/icons/youtube.svg";
 import Zalo from "@/assets/icons/zalo.png";
 import TikTok from "@/assets/icons/tiktok.svg";
-import BrandLogo from "../BrandLogo";
+import BrandLogo from "@/assets/msb-logo-white.png";
 
 export default function Footer() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -100,9 +99,9 @@ export default function Footer() {
         </NavigationGrid>
       </TopSection>
 
-      <BottomSection>
-        <CompanyInfo>
-          <BrandLogo />
+      <BottomSection $isCollapsed={isCollapsed}>
+        <CompanyInfo style={{ marginTop: -10 }}>
+          <Image src={BrandLogo} alt="MSB" width={100} height={100} />
           <CompanyName>Ngân hàng TMCP Hàng Hải Việt Nam</CompanyName>
           <Address>
             Số 54A Nguyễn Chí Thanh, Phường Láng Thượng, Quận Đống Đa, Thành phố
@@ -114,19 +113,19 @@ export default function Footer() {
           <ContactTitle>Liên hệ</ContactTitle>
           <ContactLink href="#">ATM và chi nhánh</ContactLink>
           <SocialIcons>
-            <SocialIcon href="#">
+            <SocialIcon href="#" className="fb">
               <Image src={Facebook} alt="Facebook" width={24} height={24} />
             </SocialIcon>
-            <SocialIcon href="#">
+            <SocialIcon href="#" className="linkedin">
               <Image src={LinkedIn} alt="LinkedIn" width={24} height={24} />
             </SocialIcon>
-            <SocialIcon href="#">
-              <Image src={YouTube} alt="YouTube" width={24} height={24} />
+            <SocialIcon href="#" className="youtube">
+              <YouTube />
             </SocialIcon>
-            <SocialIcon href="#">
+            <SocialIcon href="#" className="zalo">
               <Image src={Zalo} alt="Zalo" width={24} height={24} />
             </SocialIcon>
-            <SocialIcon href="#">
+            <SocialIcon href="#" className="tiktok">
               <Image src={TikTok} alt="TikTok" width={24} height={24} />
             </SocialIcon>
           </SocialIcons>
@@ -146,6 +145,27 @@ export default function Footer() {
             <PhoneNumber>1800 599 999</PhoneNumber>
           </PhoneItem>
         </PhoneSection>
+        <div style={{ flex: 1 }}>
+        {!isCollapsed && (
+          <Column style={{ flex: 1 }}>
+            <ColumnTitle>MSB Digital Bank</ColumnTitle>
+            <AppSection style={{ flexDirection: "row" }}>
+              <AppButton>
+                <Image
+                  src={GooglePlay}
+                  alt="Google Play"
+                  width={80}
+                  height={40}
+                />
+              </AppButton>
+              <AppButton>
+                <Image src={AppStore} alt="App Store" width={80} height={40} />
+              </AppButton>
+            </AppSection>
+          </Column>
+        )}
+        </div>
+        
       </BottomSection>
     </FooterContainer>
   );

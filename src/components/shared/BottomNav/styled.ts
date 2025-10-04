@@ -27,9 +27,14 @@ export const Item = styled.a`
   text-decoration: none;
   font-size: 12px;
   gap: 6px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
 
   &:hover {
     background: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 `;
 

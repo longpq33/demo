@@ -1,14 +1,15 @@
 "use client";
 import React from "react";
 import { Container, Header, Title, Subtitle, Content, CardsGrid } from "./styled";
-import Banner1 from "@/assets/exterprise-banner.png";
-import Banner2 from "@/assets/exterprise-banner.png";
-import Banner3 from "@/assets/exterprise-banner.png";
+
 import ArticleCard from "@/components/shared/ArticleCard";
+import Img8 from "@/assets/enterprise/img-8.png";
+import Img9 from "@/assets/enterprise/img-9.png";
+import Img10 from "@/assets/enterprise/img-10.png";
 
 const articles = [
   {
-    image: Banner1,
+    image: Img8,
     date: "22/08/2025",
     title: "Kim ngạch xuất khẩu tăng trong Quý 4",
     description: "Lorem ipsum dolor sit amet consectetur. Ac laoreet enim nec amet mi. Faucibus aliquet scelerisque metus in. Tortor consect...",
@@ -17,7 +18,7 @@ const articles = [
     productButtonHref: "#"
   },
   {
-    image: Banner2,
+    image: Img9,
     date: "22/08/2025", 
     title: "Giá thép đã qua đáy và khởi đầu chu kỳ tăng mới",
     description: "Lorem ipsum dolor sit amet consectetur. Ac laoreet enim nec amet mi. Faucibus aliquet scelerisque metus in. Tortor consect...",
@@ -26,7 +27,7 @@ const articles = [
     productButtonHref: "#"
   },
   {
-    image: Banner3,
+    image: Img10,
     date: "22/08/2025",
     title: "Tháng 5/2025: Xuất khẩu thủy sản Việt Nam tăng tốc trong \"thời gian vàng\"",
     description: "Lorem ipsum dolor sit amet consectetur. Ac laoreet enim nec amet mi. Faucibus aliquet scelerisque metus in. Tortor consect...",
