@@ -34,6 +34,7 @@ import LinkedIn from "@/assets/icons/linkedin.svg";
 import YouTube from "@/assets/icons/youtube.svg";
 import Zalo from "@/assets/icons/zalo.png";
 import TikTok from "@/assets/icons/tiktok.svg";
+import BrandLogo from "../BrandLogo";
 
 export default function Footer() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -101,7 +102,7 @@ export default function Footer() {
 
       <BottomSection>
         <CompanyInfo>
-          <Logo>MSB</Logo>
+          <BrandLogo />
           <CompanyName>Ngân hàng TMCP Hàng Hải Việt Nam</CompanyName>
           <Address>
             Số 54A Nguyễn Chí Thanh, Phường Láng Thượng, Quận Đống Đa, Thành phố

@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const FooterContainer = styled.footer`
   background: #0f2743;
   color: #fff;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 9999; /* Very high z-index to ensure footer is always on top */
+  z-index: 100; /* High z-index to overlay content above */
 `;
 
 export const CollapseButton = styled.button<{ $isCollapsed: boolean }>`
