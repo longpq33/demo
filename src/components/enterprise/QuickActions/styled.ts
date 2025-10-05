@@ -9,6 +9,11 @@ export const Grid = styled.section`
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+  }
 `;
 
 export const Item = styled.a`
@@ -30,6 +35,16 @@ export const Item = styled.a`
     font-size: 12px;
     font-weight: 400;
     line-height: 1;
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px;
+    height: 72px;
+    gap: 4px;
+    span {
+      font-size: 10px;
+      text-align: center;
+    }
   }
 `;
 

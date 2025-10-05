@@ -7,10 +7,14 @@ export { default as Slider } from "./shared/Slider";
 export { default as ArticleCard } from "./shared/ArticleCard";
 export { default as Footer } from "./shared/Footer";
 export { default as MobileMenu } from "./shared/MobileMenu";
+export { default as ProductCard } from "./shared/ProductCard";
+export { default as ProductGrid } from "./shared/ProductGrid";
+export { default as OffersSection } from "./shared/OffersSection";
+export { default as MobilePageHeader } from "./shared/MobilePageHeader";
 // enterprise
 export { default as TopBar } from "./enterprise/TopBar";
 export { default as TopBarMenu } from "./enterprise/TopBarMenu";
 export { default as QuickActions } from "./enterprise/QuickActions";
 export { default as CungVuonTam } from "./enterprise/CungVuonTam";
 export { default as FeaturedProducts } from "./enterprise/FeaturedProducts";
-
+export { default as Copyright } from "./shared/Copyright";

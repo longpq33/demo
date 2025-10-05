@@ -8,17 +8,25 @@ import Rate from "@/assets/icons/reward.png";
 import Fx from "@/assets/icons/percent.png";
 import Doc from "@/assets/icons/prices.png";
 import Star from "@/assets/icons/saleoff.png";
+import { useMobile } from "@/hooks";
 
-const items = [
-  { key: "register", label: "Đăng ký", icon: User },
-  { key: "guarantee", label: "Kiểm tra bảo lãnh", icon: Shield },
-  { key: "rate", label: "Lãi suất", icon: Rate },
-  { key: "fx", label: "Tỷ giá", icon: Fx },
-  { key: "fees", label: "Biểu mẫu & biểu phí", icon: Doc },
-  { key: "promo", label: "Ưu đãi", icon: Star },
-];
+
 
 export default function QuickActions() {
+  const isMobile = useMobile();
+
+  const bl = isMobile ? "Tra cứu bảo lãnh" : "Kiểm tra bảo lãnh";
+  const bm = isMobile ? "Biểu mẫu, biểu phí" : "Biểu mẫu & biểu phí";
+
+  const items = [
+    { key: "register", label: "Đăng ký", icon: User },
+    { key: "guarantee", label: bl, icon: Shield },
+    { key: "rate", label: "Lãi suất", icon: Rate },
+    { key: "fx", label: "Tỷ giá", icon: Fx },
+    { key: "fees", label: bm, icon: Doc },
+    { key: "promo", label: "Ưu đãi", icon: Star },
+  ];
+
   return (
     <Grid>
       {items.map((it) => (

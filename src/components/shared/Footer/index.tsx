@@ -34,6 +34,7 @@ import LinkedIn from "@/assets/icons/linkedin.svg";
 import Zalo from "@/assets/icons/zalo.png";
 import TikTok from "@/assets/icons/tiktok.svg";
 import BrandLogo from "@/assets/msb-logo-white.png";
+import Copyright from "../Copyright";
 
 export default function Footer() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -167,6 +168,7 @@ export default function Footer() {
         </div>
         
       </BottomSection>
+      <Copyright />
     </FooterContainer>
   );
 }

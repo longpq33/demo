@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
-import { TopBar, TopBarMenu, QuickActions, CungVuonTam } from "@/components";
+import { TopBar, TopBarMenu, QuickActions, CungVuonTam, OffersSection, MobilePageHeader, MobileMenu } from "@/components";
+import { useMobile } from "@/hooks";
+import { MobileMenuProvider, useMobileMenu } from "@/contexts/MobileMenuContext";
 import { PageLayout } from "@/layouts";
 import Image from "next/image";
 import Banner from "@/assets/exterprise-banner.png";
-import Slider from "@/components/shared/Slider";
 import Img1 from "@/assets/enterprise/img-1.png";
 import Img2 from "@/assets/enterprise/img-2.png";
 import Img3 from "@/assets/enterprise/img-3.png";
@@ -12,32 +13,37 @@ import Img4 from "@/assets/enterprise/img-4.png";
 import Img5 from "@/assets/enterprise/img-5.png";
 import Img6 from "@/assets/enterprise/img-6.png";
 import Img7 from "@/assets/enterprise/img-7.png";
+import { Content } from "./styled";
 
-export default function EnterprisePage() {
+function EnterpriseContent() {
+  const isMobile = useMobile();
+  const { isMenuOpen, closeMenu } = useMobileMenu();
+
   return (
     <PageLayout
       header={
         <>
-          <TopBar />
+        {isMobile ? <MobilePageHeader title="Doanh nghiệp" /> :  <TopBar />}
           <TopBarMenu />
         </>
       }
     >
-      {/* Hero banner / content sections sẽ được bổ sung sau */}
-      <section
-        style={{
-          borderRadius: 16,
-          background: "#0b1a3a",
-          marginBottom: 24,
-        }}
-      >
-        <Image src={Banner} alt="Hero Banner" />
-      </section>
+      <Content>
+        <section
+          style={{
+            borderRadius: 16,
+            background: "#0b1a3a",
+            marginBottom: 24,
+          }}
+          className="hero-banner"
+        >
+          <Image src={Banner} alt="Hero Banner" />
+        </section>
 
-      <QuickActions />
-      <section style={{ marginBottom: 24 }}>
-        <h2 style={{fontWeight: 600, fontSize: 24, color: "#0b1a3a"}}>Sản phẩm nổi bật</h2>
-        <Slider
+        <QuickActions />
+        
+        <OffersSection
+          title="Sản phẩm nổi bật"
           items={[
             { key: "1", title: "Giải pháp toàn diện cho ngành Dược - Y tế", image: Img1 },
             { key: "2", title: "Vay ngắn hạn theo hạn mức", image: Img2 },
@@ -45,12 +51,12 @@ export default function EnterprisePage() {
             { key: "4", title: "Giải pháp chuyên biệt ngành nhựa", image: Img4 },
             { key: "5", title: "Giải pháp chuyên biệt ngành nhựa", image: Img5 },
           ]}
+          gap={24}
+          peekRight={160}
         />
-      </section>
-     
-      <section style={{ marginBottom: 24 }}>
-        <h2 style={{fontWeight: 600, fontSize: 24, color: "#0b1a3a"}}>Ưu đãi nổi bật</h2>
-        <Slider
+      
+        <OffersSection
+          title="Ưu đãi nổi bật"
           items={[
             { key: "1", title: "M Tender - Phát hành bảo lãnh dự thầu 0 đồng", image: Img6 },
             { key: "2", title: "Vay ngắn hạn theo hạn mức", image: Img7 },
@@ -58,10 +64,23 @@ export default function EnterprisePage() {
             { key: "4", title: "Giải pháp chuyên biệt ngành nhựa", image: Banner },
             { key: "5", title: "Giải pháp chuyên biệt ngành nhựa", image: Img5 },
           ]}
+          gap={24}
+          peekRight={160}
         />
-      </section>
 
-      <CungVuonTam />
+        <CungVuonTam />
+      </Content>
+      {isMobile && (
+        <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} />
+      )}
     </PageLayout>
+  );
+}
+
+export default function EnterprisePage() {
+  return (
+    <MobileMenuProvider>
+      <EnterpriseContent />
+    </MobileMenuProvider>
   );
 }

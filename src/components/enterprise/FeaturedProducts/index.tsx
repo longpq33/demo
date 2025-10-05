@@ -1,14 +1,12 @@
 "use client";
 import React from 'react';
-import { Slider } from '@/components';
+import { OffersSection } from '@/components';
 import { useProducts } from '@/hooks';
 
 export default function FeaturedProducts() {
   const { data: products, isLoading, error } = useProducts({ 
     per_page: 5,
   });
-
-  console.log({products});
 
   if (isLoading) {
     return (
@@ -51,13 +49,11 @@ export default function FeaturedProducts() {
   }));
 
   return (
-    <section style={{ marginBottom: 24 }}>
-      <h2 style={{fontWeight: 600, fontSize: 24, color: "#0b1a3a"}}>Sản phẩm nổi bật</h2>
-      <Slider
-        items={sliderItems}
-        gap={24}
-        peekRight={160}
-      />
-    </section>
+    <OffersSection
+      title="Sản phẩm nổi bật"
+      items={sliderItems as never}
+      gap={24}
+      peekRight={160}
+    />
   );
 }

@@ -8,6 +8,12 @@ export const MenuWrap = styled.div`
   background-color: #fff;
   padding: 12px 40px;
 
+  @media (max-width: 768px) {
+    overflow: auto;
+    padding: 12px 0;
+  }
+
+
   a {
     &:hover {
       text-decoration: none;
@@ -20,4 +26,13 @@ export const LeftMenu = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+
+    a {
+      display: inline-block;
+      width: max-content;
+    }
+  }
 `;
