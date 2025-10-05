@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Bar = styled.nav`
-  position: fixed;
+  position: absolute;
   left: 40px;
   right: 40px;
   bottom: 16px;
@@ -15,6 +15,16 @@ export const Bar = styled.nav`
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
   z-index: 10;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    left: 16px;
+    right: 16px;
+    bottom: 30px;
+    gap: 4px;
+    border-radius: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+  }
 `;
 
 export const Item = styled.a`
@@ -30,6 +40,14 @@ export const Item = styled.a`
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  min-height: 44px;
+
+  @media (max-width: 768px) {
+    padding: 6px 2px;
+    font-size: 10px;
+    gap: 4px;
+    min-height: 48px;
+  }
 
   &:hover {
     background: #fff;

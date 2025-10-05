@@ -1,13 +1,17 @@
 "use client";
 import React from "react";
-import { AppHeader, HeroSection, BottomNav, ChatWidget } from "@/components";
+import { AppHeader, HeroSection, BottomNav, ChatWidget, MobileMenu } from "@/components";
 import AwardsList from "@/components/shared/AwardsList";
 import { Content, SearchBox } from "./styled";
 import SearchInput from "@/components/shared/Search";
 import { BackgroundProvider, useBackground } from "@/contexts/BackgroundContext";
+import { MobileMenuProvider, useMobileMenu } from "@/contexts/MobileMenuContext";
+import { useMobile } from "@/hooks";
 
 function HomeContent() {
   const { isHovered, backgroundImage } = useBackground();
+  const { isMenuOpen, closeMenu } = useMobileMenu();
+  const isMobile = useMobile();
 
   const contentMap = {
     'bg-about': (
@@ -70,11 +74,16 @@ function HomeContent() {
           <SearchBox>
             <SearchInput />
           </SearchBox>
-          <AwardsList color={isHovered ? "#fff" : "#1f1f1f"} />
+          {!isMobile && (
+            <AwardsList color={isHovered ? "#fff" : "#1f1f1f"} />
+          )}
         </Content>
       </div>
       <BottomNav />
       <ChatWidget />
+      {isMobile && (
+        <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} />
+      )}
     </div>
   );
 }
@@ -82,7 +91,9 @@ function HomeContent() {
 export default function HomePage() {
   return (
     <BackgroundProvider>
-      <HomeContent />
+      <MobileMenuProvider>
+        <HomeContent />
+      </MobileMenuProvider>
     </BackgroundProvider>
   );
 }

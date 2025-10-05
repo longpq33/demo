@@ -9,12 +9,21 @@ export const Shell = styled.div`
 export const Content = styled.main`
   padding: 24px;
   padding-bottom: 80px; /* Space for footer when collapsed */
+
+  @media (max-width: 768px) {
+    padding: 16px;
+    padding-bottom: 100px; /* More space for mobile footer */
+  }
 `;
 
 export const FooterArea = styled.footer`
   background: #0f2743;
   color: #fff;
   padding: 32px 16px;
+
+  @media (max-width: 768px) {
+    padding: 24px 16px;
+  }
 `;
 
 

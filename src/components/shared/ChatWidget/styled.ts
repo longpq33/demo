@@ -9,6 +9,12 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: flex-end;
   gap: 10px;
+
+  @media (max-width: 768px) {
+    right: 16px;
+    bottom: 80px;
+    gap: 8px;
+  }
 `;
 
 export const Bubble = styled.button`
@@ -17,6 +23,10 @@ export const Bubble = styled.button`
   justify-content: flex-end;
   align-items: flex-end;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 
   p {
     font-size: 12px;
@@ -56,6 +66,11 @@ export const DownloadButton = styled.button`
     #ef4029 19.15%,
     #ff671f 99.99%
   );
+
+  @media (max-width: 768px) {
+    width: 44px;
+    height: 44px;
+  }
 
   svg {
     color: #fff;

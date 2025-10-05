@@ -23,6 +23,11 @@ export const Content = styled.div`
   flex-direction: column;
   gap: 12px;
 
+  @media (max-width: 768px) {
+    padding: 16px;
+    gap: 8px;
+  }
+
   @media (min-width: 768px) {
     padding: 48px 24px;
     gap: 16px;
@@ -34,6 +39,10 @@ export const Title = styled.h1`
   font-weight: 800;
   color: #1f1f1f;
 
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+
   @media (min-width: 768px) {
     font-size: 40px;
   }
@@ -41,10 +50,18 @@ export const Title = styled.h1`
 
 export const Subtitle = styled.p`
   color: #555;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 export const SearchBox = styled.div`
   max-width: 560px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 export const HeaderSlot = styled.div`

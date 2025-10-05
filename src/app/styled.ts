@@ -11,12 +11,23 @@ export const Content = styled.div<{ $isHovered: boolean }>`
   gap: 5px;
   transition: all 0.3s ease;
   
+  @media (max-width: 768px) {
+    left: 16px;
+    right: 16px;
+    gap: 3px;
+    top: 18%;
+  }
+  
   h1 {
     font-size: 32px;
     font-weight: 800;
     color: ${({ $isHovered }) => $isHovered ? '#fff' : '#1f1f1f'};
     margin-bottom: 0;
     transition: color 0.3s ease;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
   }
 
   h2 {
@@ -25,6 +36,11 @@ export const Content = styled.div<{ $isHovered: boolean }>`
     color: ${({ $isHovered }) => $isHovered ? '#fff' : '#1f1f1f'};
     margin-bottom: 16px;
     transition: color 0.3s ease;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
   }
 
   p {
@@ -34,9 +50,18 @@ export const Content = styled.div<{ $isHovered: boolean }>`
     margin-bottom: 12px;
     line-height: 1.5;
     transition: color 0.3s ease;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
   }
 `;
 
 export const SearchBox = styled.div`
   width: 500px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
