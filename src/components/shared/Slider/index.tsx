@@ -49,7 +49,7 @@ export default function Slider({ items, gap = 24, peekRight = 160 }: SliderProps
           <SlideItem data-slide key={it.key}>
             <a href={it.href || "#"} aria-label={it.title}>
               <Card>
-                <Image src={it.image} alt={it.title} style={{ width: "100%", height: 300, objectFit: "cover", borderRadius: 16 }} />
+                <Image src={it.image} alt={it.title} width={340} height={300} style={{ width: "100%", height: 300, objectFit: "cover", borderRadius: 16 }} />
                 <CardMask />
                 <CardTitle>{it.title}</CardTitle>
               </Card>

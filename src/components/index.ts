@@ -11,4 +11,5 @@ export { default as TopBar } from "./enterprise/TopBar";
 export { default as TopBarMenu } from "./enterprise/TopBarMenu";
 export { default as QuickActions } from "./enterprise/QuickActions";
 export { default as CungVuonTam } from "./enterprise/CungVuonTam";
+export { default as FeaturedProducts } from "./enterprise/FeaturedProducts";
 
