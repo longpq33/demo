@@ -60,6 +60,10 @@ export const BottomSection = styled.div<{ $isCollapsed: boolean }>`
   align-items: flex-start;
   gap: 40px;
   margin-top: ${({ $isCollapsed }) => ($isCollapsed ? "0" : "40px")};
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0;
+  }
 `;
 
 export const NavigationGrid = styled.div`

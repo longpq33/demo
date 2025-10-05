@@ -8,7 +8,7 @@ export const Overlay = styled.div<{ $isAnimating: boolean }>`
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+  z-index: 99999;
   display: flex;
   justify-content: flex-end;
   animation: ${({ $isAnimating }) => $isAnimating ? 'fadeIn 0.3s ease' : 'fadeOut 0.3s ease'};

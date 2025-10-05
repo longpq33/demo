@@ -4,6 +4,9 @@ export const Container = styled.section`
   padding: 40px 24px;
   background: #fff;
   margin-bottom: 150px;
+  @media (max-width: 768px) {
+    margin-bottom: 200px;
+  }
 `;
 
 export const Header = styled.div`

@@ -6,4 +6,8 @@ export const Container = styled.div`
   padding: 16px;
   text-align: center;
   font-size: 12px;
+
+  @media (max-width: 768px) {
+    text-align: left;
+  }
 `;
