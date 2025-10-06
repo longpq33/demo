@@ -7,7 +7,8 @@ import ChevronRight from "@/assets/icons/chevron-right";
 
 export interface SliderItemData {
   key: string;
-  title: string;
+  title?: string;
+  description: string;
   image: StaticImageData | string;
   href?: string;
 }
@@ -47,11 +48,11 @@ export default function Slider({ items, gap = 24, peekRight = 160 }: SliderProps
       <Inner ref={ref} $gap={gap} $peekRight={peekRight}>
         {items.map((it) => (
           <SlideItem data-slide key={it.key}>
-            <a href={it.href || "#"} aria-label={it.title}>
+            <a href={it.href || "#"} aria-label={it.description}>
               <Card>
-                <Image src={it.image} alt={it.title} width={340} height={300} style={{ width: "100%", height: 300, objectFit: "cover", borderRadius: 16 }} />
+                <Image src={it.image} alt={it.description} width={340} height={300} style={{ width: "100%", height: 300, objectFit: "cover", borderRadius: 16 }} />
                 <CardMask />
-                <CardTitle>{it.title}</CardTitle>
+                <CardTitle>{it.description}</CardTitle>
               </Card>
             </a>
           </SlideItem>

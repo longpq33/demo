@@ -1,8 +1,19 @@
 "use client";
 import React from "react";
-import { TopBar, TopBarMenu, QuickActions, CungVuonTam, OffersSection, MobilePageHeader, MobileMenu } from "@/components";
+import {
+  TopBar,
+  TopBarMenu,
+  QuickActions,
+  CungVuonTam,
+  OffersSection,
+  MobilePageHeader,
+  MobileMenu,
+} from "@/components";
 import { useMobile } from "@/hooks";
-import { MobileMenuProvider, useMobileMenu } from "@/contexts/MobileMenuContext";
+import {
+  MobileMenuProvider,
+  useMobileMenu,
+} from "@/contexts/MobileMenuContext";
 import { PageLayout } from "@/layouts";
 import Image from "next/image";
 import Banner from "@/assets/exterprise-banner.png";
@@ -23,7 +34,7 @@ function EnterpriseContent() {
     <PageLayout
       header={
         <>
-        {isMobile ? <MobilePageHeader title="Doanh nghiệp" /> :  <TopBar />}
+          {isMobile ? <MobilePageHeader title="Doanh nghiệp" /> : <TopBar />}
           <TopBarMenu />
         </>
       }
@@ -41,28 +52,71 @@ function EnterpriseContent() {
         </section>
 
         <QuickActions />
-        
+
         <OffersSection
           title="Sản phẩm nổi bật"
           items={[
-            { key: "1", title: "Giải pháp toàn diện cho ngành Dược - Y tế", image: Img1 },
-            { key: "2", title: "Vay ngắn hạn theo hạn mức", image: Img2 },
-            { key: "3", title: "Giải pháp cho Nhóm doanh nghiệp Logistic", image: Img3 },
-            { key: "4", title: "Giải pháp chuyên biệt ngành nhựa", image: Img4 },
-            { key: "5", title: "Giải pháp chuyên biệt ngành nhựa", image: Img5 },
+            {
+              key: "1",
+              title: "Sản phẩm A",
+              description: "Giải pháp toàn diện cho ngành Dược - Y tế",
+              image: Img1,
+            },
+            { key: "2",  title: "Sản phẩm A", description: "Vay ngắn hạn theo hạn mức", image: Img2 },
+            {
+              key: "3",
+              title: "Sản phẩm A",
+              description: "Giải pháp cho Nhóm doanh nghiệp Logistic",
+              image: Img3,
+            },
+            {
+              key: "4",
+              title: "Sản phẩm A",
+              description: "Giải pháp chuyên biệt ngành nhựa",
+              image: Img4,
+            },
+            ...isMobile ? [] : [
+              {
+                key: "5",
+                title: "Sản phẩm A",
+                description: "Giải pháp chuyên biệt ngành nhựa",
+                image: Img5,
+              },
+            ],
           ]}
           gap={24}
           peekRight={160}
         />
-      
+
         <OffersSection
           title="Ưu đãi nổi bật"
           items={[
-            { key: "1", title: "M Tender - Phát hành bảo lãnh dự thầu 0 đồng", image: Img6 },
-            { key: "2", title: "Vay ngắn hạn theo hạn mức", image: Img7 },
-            { key: "3", title: "Giải pháp cho Nhóm doanh nghiệp Logistic", image: Img5 },
-            { key: "4", title: "Giải pháp chuyên biệt ngành nhựa", image: Banner },
-            { key: "5", title: "Giải pháp chuyên biệt ngành nhựa", image: Img5 },
+            {
+              key: "1",
+              title: "Ưu đãi A",
+              description: "M Tender - Phát hành bảo lãnh dự thầu 0 đồng",
+              image: Img6,
+            },
+            { key: "2",  title: "Ưu đãi A", description: "Vay ngắn hạn theo hạn mức", image: Img7 },
+            {
+              key: "3",
+              title: "Ưu đãi A",
+              description: "Giải pháp cho Nhóm doanh nghiệp Logistic",
+              image: Img5,
+            },
+            {
+              key: "4",
+              title: "Ưu đãi A",
+              description: "Giải pháp chuyên biệt ngành nhựa",
+              image: Banner,
+            },
+            ...isMobile ? [] : [
+            {
+              key: "5",
+              title: "Ưu đãi A",
+              description: "Giải pháp chuyên biệt ngành nhựa",
+              image: Img5,
+            }],
           ]}
           gap={24}
           peekRight={160}
@@ -70,9 +124,7 @@ function EnterpriseContent() {
 
         <CungVuonTam />
       </Content>
-      {isMobile && (
-        <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} />
-      )}
+      {isMobile && <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} />}
     </PageLayout>
   );
 }

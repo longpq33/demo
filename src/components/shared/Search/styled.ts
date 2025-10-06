@@ -16,7 +16,9 @@ export const Input = styled.input`
   padding: 12px 0;
   border: none;
   outline: none;
-  &:focus{
+  color: #000;
+  
+  &:focus {
     outline: none;
     border: none;
   }

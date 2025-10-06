@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { useMobile } from "@/hooks";
 import BrandLogo from "../BrandLogo";
 import ChevronDown from "@/assets/icons/chevron-down";

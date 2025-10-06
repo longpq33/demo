@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const Bar = styled.div`
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 99999;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
   padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.85);
+  background-color: #fafafa;
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 10px rgba(0,0,0,0.06);
 

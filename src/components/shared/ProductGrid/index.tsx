@@ -9,6 +9,7 @@ interface ProductGridProps {
     title: string;
     image: StaticImageData;
     href?: string;
+    description: string;
   }>;
   gap?: number;
 }
@@ -20,6 +21,7 @@ export default function ProductGrid({ items, gap = 12 }: ProductGridProps) {
         <ProductCard
           key={item.key}
           title={item.title}
+          description={item.description}
           image={item.image}
           href={item.href}
         />

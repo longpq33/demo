@@ -10,6 +10,7 @@ interface OffersSectionProps {
   items: Array<{
     key: string;
     title: string;
+    description: string;
     image: StaticImageData;
     href?: string;
   }>;

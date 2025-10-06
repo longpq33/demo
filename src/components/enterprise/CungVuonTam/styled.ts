@@ -3,9 +3,10 @@ import styled from "styled-components";
 export const Container = styled.section`
   padding: 40px 24px;
   background: #fff;
-  margin-bottom: 150px;
+  margin-bottom: 200px;
   @media (max-width: 768px) {
-    margin-bottom: 200px;
+    padding: 40px 0;
+    background-color: transparent;
   }
 `;
 

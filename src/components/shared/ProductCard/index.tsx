@@ -1,15 +1,16 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
-import { Card, CardMask, CardTitle } from "./styled";
+import { Card, CardMask, CardTitle, CardDescription } from "./styled";
 
 interface ProductCardProps {
   key: string;
   title: string;
   image: StaticImageData;
   href?: string;
+  description: string;
 }
 
-export default function ProductCard({ key, title, image, href }: ProductCardProps) {
+export default function ProductCard({ key, title, image, href, description }: ProductCardProps) {
   return (
     <a href={href || "#"} aria-label={title}>
       <Card>
@@ -27,6 +28,7 @@ export default function ProductCard({ key, title, image, href }: ProductCardProp
         />
         <CardMask />
         <CardTitle>{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
       </Card>
     </a>
   );

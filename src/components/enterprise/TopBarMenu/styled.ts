@@ -1,3 +1,4 @@
+import { colors } from "@/theme";
 import styled from "styled-components";
 
 export const MenuWrap = styled.div`
@@ -10,9 +11,12 @@ export const MenuWrap = styled.div`
 
   @media (max-width: 768px) {
     overflow: auto;
-    padding: 12px 0;
+    padding: 0;
+    position: sticky;
+    top: 55px;
+    z-index: 99999;
+    background-color: #fafafa;
   }
-
 
   a {
     &:hover {
@@ -26,6 +30,14 @@ export const LeftMenu = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
+
+  a {
+    color: #000;
+
+    &:first-child {
+      border-bottom: 2px solid ${colors.brand.primary};
+    }
+  }
 
   @media (max-width: 768px) {
     gap: 10px;

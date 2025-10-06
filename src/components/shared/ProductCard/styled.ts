@@ -56,15 +56,31 @@ export const CardTitle = styled.div`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   z-index: 9999;
-  height: 50px;
   position: relative;
   display: flex;
   align-items: center;
-  padding: 20px 30px;
+  padding: 20px 30px 0 20px;
+  color: #000;
 
   @media (max-width: 768px) {
     font-size: 12px;
     padding: 10px;
     font-weight: 400;
   }
+`;
+
+export const CardDescription = styled.p`
+  font-size: 14px;
+  color: #777;
+  padding: 10px;
+  padding-top: 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  background-color: #fff;
+  overflow: hidden;
+  z-index: 9999;
+  height: 40px;
+  position: relative;
 `;

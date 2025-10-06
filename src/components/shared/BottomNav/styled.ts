@@ -27,7 +27,7 @@ export const Bar = styled.nav`
   }
 `;
 
-export const Item = styled.a`
+export const Item = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,6 +41,7 @@ export const Item = styled.a`
   overflow: hidden;
   transition: all 0.3s ease;
   min-height: 44px;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     padding: 6px 2px;

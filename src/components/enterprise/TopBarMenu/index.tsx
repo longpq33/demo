@@ -12,7 +12,7 @@ export default function TopBarMenu() {
   const isMobile = useMobile();
 
   const items = [
-    { key: "home", label: "", href: "/", icon: isMobile ? Menu : logo },
+    { key: "home", label: "", href: isMobile ? "#" : "/", icon: isMobile ? Menu : logo },
     { key: "credit", label: "Tín dụng", href: "#" },
     { key: "cash", label: "Thanh toán & quản lý dòng tiền", href: "#" },
     { key: "fx", label: "Ngoại tệ", href: "#" },

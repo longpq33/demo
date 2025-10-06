@@ -1,5 +1,5 @@
 "use client";
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
 import { StaticImageData } from "next/image";
 import bgHome from "@/assets/bg-home.png";
 import bgAbout from "@/assets/bg-about.png";
@@ -8,6 +8,8 @@ import bgCustomer from "@/assets/bg-customer.png";
 import bgKinhdoanh from "@/assets/bg-kinhdoanh.png";
 import bgEnterprise from "@/assets/bg-enterprise.png";
 import bgVuontam from "@/assets/bg-vuontam.png";
+import bgHomeMobile from "@/assets/bg-home-mobile.png";
+import { useMobile } from "@/hooks";
 
 interface BackgroundContextType {
   backgroundImage: StaticImageData;
@@ -29,8 +31,13 @@ export const backgroundImages = {
 };
 
 export function BackgroundProvider({ children }: { children: ReactNode }) {
+  const isMobile = useMobile();
   const [backgroundImage, setBackgroundImage] = useState(bgHome);
   const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    setBackgroundImage(isMobile ? bgHomeMobile : bgHome);
+  }, [isMobile]);
 
   return (
     <BackgroundContext.Provider value={{ backgroundImage, setBackgroundImage, isHovered, setIsHovered }}>

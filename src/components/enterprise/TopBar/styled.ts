@@ -1,3 +1,4 @@
+import { colors } from "@/theme";
 import styled from "styled-components";
 
 export const Bar = styled.div`
@@ -8,6 +9,29 @@ export const Bar = styled.div`
   padding: 12px 24px;
   background: #fff;
   width: 100%;
+  position: relative;
+
+  .bottom-nav-container {
+    position: absolute;
+    top: 100%;
+    left: 5.5%;
+    width: 60%;
+    z-index: 999;
+
+    .bottom-nav {
+      width: 100%;
+      grid-template-columns: repeat(7, 1fr);
+      background: ${colors.surface.base};
+      padding: 20px;
+      position: relative;
+
+      > div {
+        &:hover {
+          background-color: #feefe7;
+        }
+      }
+    }
+  }
 `;
 
 export const Left = styled.div`
@@ -25,12 +49,11 @@ export const Left = styled.div`
     border-radius: 20px;
     &:hover {
       border-color: #d9d9d9 !important;
-      span, 
+      span,
       svg {
         color: #ff671f;
         stroke: #ff671f;
       }
-     
     }
   }
 `;
@@ -63,5 +86,3 @@ export const Right = styled.div`
     height: 40px;
   }
 `;
-
-
